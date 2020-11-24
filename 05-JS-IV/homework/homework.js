@@ -80,7 +80,7 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (objeto.propiedad == argument.propiedad){
+  if (objeto[propiedad]){
     return true;    
   }  
   else{
@@ -93,12 +93,11 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  if (usuario.password == password){
+  if(usuario.password != null && usuario.password == password){
     return true;
-  }
-  else{
+  }  
     return false;
-  }
+  
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
@@ -155,7 +154,7 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function (){
-    var precioDescuento = producto.precio - (producto.precio * producto.precioDeDescuento);
+    var precioDescuento = producto.precio - (producto.precio * producto.porcentajeDeDescuento);
     return precioDescuento;
   }
   return producto;
